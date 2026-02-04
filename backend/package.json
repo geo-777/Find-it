@@ -1,0 +1,22 @@
+{
+  "name": "findit-backend",
+  "version": "1.0.0",
+  "description": "Lost & Found App (prototype for EE&IPR Micro-project)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/geo-777/Find-it.git"
+  },
+  "keywords": [
+    "backend"
+  ],
+  "author": "Georgy Binu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/geo-777/Find-it/issues"
+  },
+  "homepage": "https://github.com/geo-777/Find-it#readme"
+}
