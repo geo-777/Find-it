@@ -1,0 +1,1 @@
+renderNavbar("register");

@@ -2,18 +2,13 @@ function renderNavbar(currentPage = "home") {
   const container = document.getElementById("navbar-container");
   if (!container) return;
 
-  // Path prefix depending on page depth
   const isHome = currentPage === "home";
   const prefix = isHome ? "./" : "../../";
-
-  // Active styles (inline, since you don't want class changes)
-  const activeStyle = 'style="color: var(--primary); font-weight: 600;"';
 
   container.innerHTML = `
 <nav id="nav">
   <a href="${prefix}index.html" class="nav-logo">
     <span class="logo-icon">
-      <!-- svg unchanged -->
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
         viewBox="0 0 24 24" fill="none" stroke="currentColor"
         stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
@@ -25,19 +20,13 @@ function renderNavbar(currentPage = "home") {
   </a>
 
   <div class="nav-links">
-    <a href="${prefix}pages/lost/lost.html"
-      >
-      Lost
-    </a>
-    <a href="${prefix}pages/found/found.html"
-      >
-      Found
-    </a>
+    <a href="${prefix}pages/lost/lost.html">Lost</a>
+    <a href="${prefix}pages/found/found.html">Found</a>
   </div>
 
   <div class="nav-auth-btns">
-    <button class="login-btn">Login</button>
-    <button class="btn-primary">Register</button>
+    <a href="${prefix}pages/login/login.html" class="login-btn">Login</a>
+    <a href="${prefix}pages/register/register.html" class="btn-primary">Register</a>
   </div>
 
   <button class="nav-menu-btn" id="menuBtn">
@@ -78,19 +67,13 @@ function renderNavbar(currentPage = "home") {
   </div>
 
   <div class="drawer-links">
-    <a href="${prefix}pages/lost/lost.html"
-      >
-      Lost Items
-    </a>
-    <a href="${prefix}pages/found/found.html"
-      >
-      Found Items
-    </a>
+    <a href="${prefix}pages/lost/lost.html">Lost Items</a>
+    <a href="${prefix}pages/found/found.html">Found Items</a>
   </div>
 
   <div class="drawer-auth">
-    <button class="btn-outline">Login</button>
-    <button class="btn-primary full-width">Register</button>
+    <a href="${prefix}pages/login/login.html" class="btn-outline">Login</a>
+    <a href="${prefix}pages/register/register.html" class="btn-primary full-width">Register</a>
   </div>
 </div>
   `;

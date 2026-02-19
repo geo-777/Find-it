@@ -20,6 +20,20 @@
   background-color: transparent;
   font-size: 16px;
 }
+
+.login-btn,
+.btn-primary,
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+.login-btn {
+  color: var(--primary-background);
+  padding: 0.5rem 1rem;
+}
 .nav-links {
   gap: 2rem;
 }
