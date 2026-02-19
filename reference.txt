@@ -1,0 +1,61 @@
+IGNORE.. not important.. no correlation with the code
+
+
+filestructure
+
+findit/
+│
+├── index.html                (Entry / redirect)
+│
+├── pages/
+│   ├── lost/
+│   │   ├── lost.html
+│   │   ├── lost.css
+│   │   └── lost.js
+│   │
+│   ├── found/
+│   │   ├── found.html
+│   │   ├── found.css
+│   │   └── found.js
+│   │
+│   ├── login/
+│   │   ├── login.html
+│   │   ├── login.css
+│   │   └── login.js
+│   │
+│   ├── register/
+│   │   ├── register.html
+│   │   ├── register.css
+│   │   └── register.js
+│   │
+│   ├── post-lost/
+│   │   ├── post-lost.html
+│   │   ├── post-lost.css
+│   │   └── post-lost.js
+│   │
+│   ├── post-found/
+│   │   ├── post-found.html
+│   │   ├── post-found.css
+│   │   └── post-found.js
+│   │
+│   ├── item/
+│   │   ├── item.html
+│   │   ├── item.css
+│   │   └── item.js
+│   │
+│   └── my-posts/
+│       ├── my-posts.html
+│       ├── my-posts.css
+│       └── my-posts.js
+│
+├── shared/
+│   ├── navbar.html
+│   ├── shared.css
+│   └── utils.js
+│
+├── data/
+│   └── mockData.js
+│
+└── assets/
+    ├── images/
+    └── icons/

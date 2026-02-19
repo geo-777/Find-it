@@ -1,0 +1,160 @@
+/* navigation bar styles */
+#nav {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem clamp(3rem, 10vw, 5rem);
+}
+
+.nav-auth-btns,
+.nav-links {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+.login-btn {
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  font-size: 16px;
+}
+.nav-links {
+  gap: 2rem;
+}
+.nav-links a {
+  color: var(--primary-foreground);
+  text-decoration: none;
+  font-size: 17px;
+}
+.nav-logo {
+  display: flex;
+  gap: 0.3rem;
+  color: var(--primary-foreground);
+  font-size: 25px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.logo-icon svg {
+  color: var(--chart-1);
+}
+
+.nav-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .nav-links,
+  .nav-auth-btns {
+    display: none;
+  }
+
+  .nav-menu-btn {
+    display: block;
+  }
+  #nav {
+    padding: 1rem 2rem;
+  }
+}
+
+.mobile-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s ease;
+  z-index: 999;
+}
+
+.mobile-drawer {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 85%;
+  max-width: 320px;
+  height: 100%;
+  background: #ffffff;
+  padding: 1.5rem;
+  box-shadow: -4px 0 20px rgba(0, 0, 0, 0.1);
+  transition: right 0.3s ease;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.mobile-drawer.active {
+  right: 0;
+}
+
+.mobile-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.drawer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.drawer-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.drawer-close {
+  border: none;
+  background: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.drawer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  border-top: 1px solid #e5e7eb;
+  padding-top: 1.5rem;
+}
+
+.drawer-links a {
+  text-decoration: none;
+  font-size: 16px;
+  color: #374151;
+}
+
+.drawer-auth {
+  border-top: 1px solid #e5e7eb;
+  padding-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.btn-outline {
+  padding: 0.7rem;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  background: white;
+  cursor: pointer;
+}
+
+.btn-primary.full-width {
+  width: 100%;
+  padding: 0.8rem;
+  border-radius: 10px;
+  border: none;
+  background: #2563eb;
+  color: white;
+  cursor: pointer;
+}
