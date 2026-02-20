@@ -12,10 +12,10 @@
   --primary-foreground: #1f1f1f;
 
   --secondary: #2a2a2a;
-  --secondary-foreground: #f5f5f5;
+  --secondary-foreground: #e1e1e1;
 
   --muted: #2a2a2a;
-  --muted-foreground: #b3b3b3;
+  --muted-foreground: #d1d0d0;
 
   --accent: #2a2a2a;
   --accent-foreground: #f5f5f5;
@@ -48,6 +48,8 @@
 
   --sidebar-border: #2a2a2a;
   --sidebar-ring: #525252;
+
+  --footer: #141e33;
 }
 
 * {
