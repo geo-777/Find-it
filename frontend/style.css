@@ -1,1 +1,53 @@
 /* this is the styles for home page*/
+.title-panel {
+  display: flex;
+  flex-direction: column;
+  padding-block: 5rem;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  text-align: center;
+  background-color: var(--chart-1);
+}
+
+.title-panel h1 {
+  font-size: 50px;
+  color: var(--foreground);
+}
+.title-panel p {
+  font-size: 18px;
+  color: var(--secondary-foreground);
+}
+.title-panel__Btns {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+}
+.title-panel-btn {
+  padding: 1rem 2rem;
+  border-radius: 0.7rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: fit-content;
+  color: var(--chart-1);
+  background-color: var(--primary);
+}
+.title-panel-btn p {
+  color: var(--chart-1);
+}
+.report-found-btn {
+  color: var(--primary);
+  background-color: var(--chart-6);
+}
+.report-found-btn p {
+  color: var(--primary);
+}
+
+@media (max-width: 530px) {
+  .title-panel__Btns {
+    flex-direction: column;
+  }
+}
