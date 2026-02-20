@@ -1,11 +1,11 @@
 IGNORE.. not important.. no correlation with the code
-
+just files used for planning..
 
 filestructure
 
 findit/
 │
-├── index.html                (Entry / redirect)
+├── index.html                
 │
 ├── pages/
 │   ├── lost/

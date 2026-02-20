@@ -1,2 +1,2 @@
-//to render it
+// dont remove this line.. if this line isnt there.. the navbar would go away...
 renderNavbar("found");
