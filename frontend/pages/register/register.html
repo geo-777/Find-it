@@ -22,10 +22,61 @@
     <!-- navigation bar will be inserted here automatically.. dont touch This
     ignore -->
     <div id="navbar-container"></div>
-    <!-- remove this line by the way.. this is just for your reference.. start coding from here..
-  dont remove the footer at bottom.. 
-  dont remove that div with navbar-container id.. thats for injecting navbar.. ignore that too.. -->
-    <p>Register page.. write code .. remove this line</p>
+
+    <div class="container">
+      <div class="heading-panel">
+        <div class="svg-icon">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="28"
+            height="28"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="white"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+            <circle cx="9" cy="7" r="4" />
+            <line x1="19" y1="8" x2="19" y2="14" />
+            <line x1="22" y1="11" x2="16" y2="11" />
+          </svg>
+        </div>
+
+        <h3>Create Account</h3>
+        <p>Join Findit to report lost or found items</p>
+      </div>
+
+      <form class="form">
+        <div class="input-field">
+          <label class="input-field__label">Name <span>*</span></label>
+          <input type="text" placeholder="John Doe" />
+        </div>
+
+        <div class="input-field">
+          <label class="input-field__label">Email <span>*</span></label>
+          <input type="email" placeholder="you@example.com" />
+        </div>
+
+        <div class="input-field">
+          <label class="input-field__label">Phone <span>*</span></label>
+          <input type="tel" placeholder="+1 (555) 000-0000" />
+        </div>
+
+        <div class="input-field">
+          <label class="input-field__label">Password <span>*</span></label>
+          <input type="password" placeholder="••••••••" />
+        </div>
+
+        <button type="submit">Register</button>
+
+        <p>
+          Already have an account?
+          <a href="../login/login.html">Login here</a>
+        </p>
+      </form>
+    </div>
 
     <footer class="footer">
       <p>&copy; 2026 Findit. All rights reserved.</p>

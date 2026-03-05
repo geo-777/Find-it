@@ -1,0 +1,126 @@
+body {
+  font-family: "Inter", sans-serif;
+  background: #f5f7fb;
+  margin: 0;
+}
+
+.container {
+  min-height: calc(100vh - 120px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 28px;
+  padding: 40px 20px;
+}
+
+.svg-icon {
+  background: #2f66f3;
+  color: white;
+  height: 56px;
+  width: 56px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.heading-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.heading-panel h3 {
+  margin: 10px 0 6px 0;
+  font-size: 30px;
+  font-weight: 700;
+  color: #111827;
+  letter-spacing: -0.3px;
+}
+
+.heading-panel p {
+  margin: 0;
+  color: #6b7280;
+  font-size: 15px;
+}
+
+.form {
+  background: white;
+  padding: 30px;
+  border-radius: 14px;
+  width: 420px;
+  max-width: 90vw;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.input-field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.input-field__label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+}
+
+.input-field__label span {
+  color: #ef4444;
+}
+
+.input-field input {
+  padding: 13px 15px;
+  border-radius: 9px;
+  border: 1px solid #e5e7eb;
+  font-size: 14px;
+  outline: none;
+  transition: border 0.2s;
+}
+
+.input-field input:focus {
+  border-color: #2f66f3;
+}
+
+button {
+  margin-top: 6px;
+  padding: 13px;
+  border-radius: 10px;
+  border: none;
+  background: linear-gradient(90deg, #2f66f3, #2a55e5);
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    transform 0.1s,
+    box-shadow 0.15s;
+}
+
+button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 18px rgba(47, 102, 243, 0.25);
+}
+
+.form p {
+  text-align: center;
+  font-size: 14px;
+  color: #6b7280;
+  margin-top: 4px;
+}
+
+.form p a {
+  color: #2f66f3;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.form p a:hover {
+  text-decoration: underline;
+}
