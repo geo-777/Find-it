@@ -1,0 +1,125 @@
+.header-container{
+    width:550px;
+    margin:0 auto;
+    text-align: left;
+}
+h1{
+    text-align: left;
+    margin-top:50px;
+    margin-bottom:10px;
+    font-size: 35px;
+    font-weight: bold;
+
+}
+#subline{
+    text-align: left;
+    line-height: 25px;
+    margin-top:10px;
+    margin-bottom:10px;
+    color:rgb(81, 79, 79);
+}
+.formfill{
+    display:block;
+    margin-top:40px;
+    font-size: 14px;
+}
+.formbox{
+    width:600px;
+    height:auto;
+    border: 1px solid #e5e5e5;
+    box-shadow:0px 6px 20px rgba(0,0,0,0.08);
+    border-radius: 12px;
+    margin:40px auto;
+    padding:20px;
+    box-sizing:border-box;
+    
+    
+
+}
+.textbox ,.textbox1,.upload-box{
+    
+    margin: 10px auto;
+    width: 95%;
+    display: block;
+    font-size: 14px;
+    box-sizing:border-box;
+    height:auto;
+    padding:15px 15px;
+    border-radius: 10px;
+    border: 0.5px solid grey;
+
+}
+.textbox1{
+    height:140px;
+    resize:none;
+}
+.upload-box{
+    
+    height: 140px;
+    border:2px dashed grey;
+    
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction: column;
+    
+}
+#image-text{
+    color: #007BFF;
+    font-weight: bold;
+}
+.textbox:focus,.textbox1:focus{
+    outline:none;
+    border: 2px solid #007BFF;
+    box-shadow: 0 0 5px rgba(0,123,255,0.5);
+}
+.upload-box:hover{
+    outline:none;
+    border: 2px dashed #007BFF;
+    
+
+}
+
+.upload-icon{
+    font-size:40px;
+    color:gray;
+    margin-bottom:10px;
+}
+
+.upload-box input{
+    display:none;
+}
+.btn{
+    display: flex;
+    justify-content:space-between;
+    gap:15px;
+    margin-bottom: 20px;
+    margin-top: 30px;
+
+}
+.btn1,.btn2{
+    width: 48%;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 10px;
+    border:none;
+    cursor:pointer;
+}
+.btn1{
+    background-color: #007BFF;
+    color:white;
+}
+.btn1:hover{
+    background-color: #0056b3;
+}
+.btn2{
+    background-color:lightgrey;
+}
+.btn2:hover{
+    background-color:grey;
+}
+.formfill::after{
+    content:"*";
+    color: red;
+    font-size: small;
+}   

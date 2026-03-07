@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -25,8 +26,34 @@
     <!-- remove this line by the way.. this is just for your reference.. start coding from here..
   dont remove the footer at bottom.. 
   dont remove that div with navbar-container id.. thats for injecting navbar.. ignore that too.. -->
-    <p>Post lost stuff page.. write code .. remove this line</p>
+    <div class="header-container">
+      <h1>Report Lost Item</h1>
+      <p id="subline">Fill out the form below to report an item you've lost. Other users will be able to contact you if they find it.</p>
+      
+    </div>
+    <div class="formbox">
+      <form>
+        <label class="formfill">Item Name</label>
+        <input class="textbox" type="text" placeholder="eg Black leather wallet" required>
+        <label class="formfill">Description</label>
+        <textarea class="textbox1" placeholder="Provide a detailed description of the item..."  required></textarea>
+        <label class="formfill">Last seen Location</label>
+        <input class="textbox" type="text" placeholder="eg City gym,locker room" required>
+        <label class="formfill">Date Lost </label>
+        <input class="textbox" type="date" required>
+        <label class="formfill"> Image (Optional)</label>
+        <div class="upload-box" tabindex="0">
+          <i class="fa-solid fa-arrow-up-from-bracket upload-icon"></i>
+          <input type="file">
+          <p id="image-text">Click to upload image</p>
+        </div>
+        <div class="btn">
+          <button class="btn1" type="submit">Post Lost Item</button>
+          <button class="btn2">Cancel</button>
+        </div>
 
+      </form>
+    </div>
     <footer class="footer">
       <p>&copy; 2026 Findit. All rights reserved.</p>
     </footer>
