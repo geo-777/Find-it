@@ -63,7 +63,25 @@
   border: none;
   cursor: pointer;
 }
-
+.nav-username span {
+  font-weight: 600;
+}
+.nav-user {
+  display: inline-flex;
+  align-items: center;
+}
+.logout-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  background-color: transparent;
+  border: none;
+  margin-left: 1rem;
+  font-size: 1rem;
+}
+.logout-btn:hover {
+  cursor: pointer;
+}
 @media (max-width: 768px) {
   .nav-links,
   .nav-auth-btns {

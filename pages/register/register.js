@@ -3,13 +3,24 @@ import {
   createUserWithEmailAndPassword,
   updateProfile,
 } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-auth.js";
-
+import { renderNavbar } from "../../shared/navbar/navbar-component.js";
+import {
+  renderLoader,
+  hideLoader,
+} from "../../shared/loader/loader-component.js";
+import { initAuth } from "../../shared/services/auth.js";
 import {
   doc,
   setDoc,
 } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-firestore.js";
 
-renderNavbar("register"); // dont remove this line.. if this line isnt there.. the navbar would go away...
+document.addEventListener("DOMContentLoaded", async () => {
+  renderLoader();
+  await initAuth();
+  await renderNavbar();
+
+  hideLoader();
+});
 
 const form = document.querySelector(".form");
 
@@ -130,7 +141,7 @@ form.addEventListener("submit", async (e) => {
 
     console.log("User created successfully");
 
-    window.location.href = "../login/login.html";
+    window.location.href = "../../index.html";
   } catch (error) {
     console.error(error);
 
