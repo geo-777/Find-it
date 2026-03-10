@@ -4,8 +4,6 @@ async function renderNavbar() {
   const container = document.getElementById("navbar-container");
   if (!container) return;
 
-  await initAuth();
-
   const myPostsLink = isLoggedIn
     ? `<a href="/pages/my-posts/my-posts.html">My Posts</a>`
     : "";
