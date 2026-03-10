@@ -1,5 +1,5 @@
 .header-container{
-    width:550px;
+    width:600px;
     margin:0 auto;
     text-align: left;
 }
@@ -44,9 +44,10 @@ h1{
     font-size: 14px;
     box-sizing:border-box;
     height:auto;
-    padding:15px 15px;
+    padding:10px 15px;
     border-radius: 10px;
     border: 0.5px solid grey;
+
 
 }
 .textbox1{
@@ -108,18 +109,32 @@ h1{
 .btn1{
     background-color: #007BFF;
     color:white;
+   
 }
 .btn1:hover{
     background-color: #0056b3;
 }
 .btn2{
     background-color:lightgrey;
+    text-decoration:none;
+    color:black;
+    display: flex;
+    justify-content:center;
+    align-items: center;
 }
 .btn2:hover{
     background-color:grey;
 }
-.formfill::after{
+.req::after{
     content:"*";
     color: red;
     font-size: small;
 }   
+@media(max-width:600px){
+    .header-container{
+        width:90%;
+    }
+    .formbox{
+        width:90%;
+    }
+}

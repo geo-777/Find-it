@@ -1,60 +1,100 @@
 body{
-    font-family: Arial, sans-serif;
-    background:#f2f2f2;
-    margin:0;
-    padding:0;
+font-family: Arial, Helvetica, sans-serif;
+background:#f3f4f6;
+margin:0;
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:100vh;
 }
 
 .container{
-    width:60%;
-    margin:40px auto;
-    background:white;
-    padding:30px;
-    border-radius:10px;
-    box-shadow:0 0 10px rgba(0,0,0,0.1);
-}
-
-h1{
-    margin-bottom:10px;
-}
-
-p{
-    color:#555;
+background:white;
+width:500px;
+padding:30px;
+border-radius:10px;
+box-shadow:0 2px 10px rgba(0,0,0,0.1);
 }
 
 label{
-    font-weight:bold;
-    display:block;
-    margin-top:20px;
+display:block;
+font-weight:600;
+margin-top:15px;
+margin-bottom:6px;
+}
+
+.required{
+color:red;
 }
 
 input, textarea{
-    width:100%;
-    padding:12px;
-    margin-top:8px;
-    border:1px solid #ccc;
-    border-radius:6px;
-    font-size:14px;
+width:100%;
+padding:12px;
+border-radius:8px;
+border:1px solid #ddd;
+font-size:14px;
+box-sizing:border-box;
 }
 
 textarea{
-    height:120px;
+height:110px;
+resize:none;
 }
 
-button{
-    margin-top:25px;
-    padding:12px 25px;
-    border:none;
-    background:#007BFF;
-    color:white;
-    font-size:16px;
-    border-radius:6px;
-    cursor:pointer;
+input:focus, textarea:focus{
+outline:none;
+border-color:#3b82f6;
 }
 
-button:hover{
-    background:#0056b3;
+.upload-box{
+margin-top:10px;
+border:2px dashed #d1d5db;
+border-radius:10px;
+padding:40px;
+text-align:center;
+color:#6b7280;
+cursor:pointer;
 }
-input[type="file"]{
-    margin-top:8px;
+
+.upload-box:hover{
+background:#f9fafb;
+}
+
+.upload-box input{
+display:none;
+}
+
+.buttons{
+display:flex;
+gap:15px;
+margin-top:25px;
+}
+
+.post-btn{
+flex:1;
+background:#2563eb;
+color:white;
+border:none;
+padding:14px;
+border-radius:10px;
+font-size:16px;
+cursor:pointer;
+}
+
+.post-btn:hover{
+background:#1d4ed8;
+}
+
+.cancel-btn{
+flex:1;
+background:#e5e7eb;
+border:none;
+padding:14px;
+border-radius:10px;
+font-size:16px;
+cursor:pointer;
+}
+
+.cancel-btn:hover{
+background:#d1d5db;
 }
