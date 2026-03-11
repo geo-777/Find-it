@@ -27,103 +27,104 @@
   </head>
 
   <body>
-    <div id="navbar-container"></div>
+    <div id="app" style="display: none">
+      <div id="navbar-container"></div>
 
-    <div class="header-container">
-      <h1>Report Found Item</h1>
-      <p id="subline">
-        Fill out the form below to report an item you've found. The owner may
-        contact you if it matches their lost item.
-      </p>
+      <div class="header-container">
+        <h1>Report Found Item</h1>
+        <p id="subline">
+          Fill out the form below to report an item you've found. The owner may
+          contact you if it matches their lost item.
+        </p>
+      </div>
+
+      <div class="formbox">
+        <form id="foundForm">
+          <div class="form-group">
+            <div class="label-row">
+              <label class="formfill req">Item Name</label>
+              <span class="error" id="itemNameError"></span>
+            </div>
+
+            <input
+              id="itemName"
+              class="textbox"
+              type="text"
+              placeholder="eg Black leather wallet"
+            />
+          </div>
+
+          <div class="form-group">
+            <div class="label-row">
+              <label class="formfill req">Description</label>
+              <span class="error" id="descriptionError"></span>
+            </div>
+
+            <textarea
+              id="description"
+              class="textbox1"
+              placeholder="Provide a detailed description of the item..."
+            ></textarea>
+          </div>
+
+          <div class="form-group">
+            <div class="label-row">
+              <label class="formfill req">Found Location</label>
+              <span class="error" id="locationError"></span>
+            </div>
+
+            <input
+              id="location"
+              class="textbox"
+              type="text"
+              placeholder="eg Library entrance"
+            />
+          </div>
+
+          <div class="form-group">
+            <div class="label-row">
+              <label class="formfill req">Date Found</label>
+              <span class="error" id="dateError"></span>
+            </div>
+
+            <input id="dateFound" class="textbox" type="date" />
+          </div>
+
+          <div class="form-group">
+            <div class="label-row">
+              <label class="formfill req">Image</label>
+              <span class="error" id="imageError"></span>
+            </div>
+
+            <div class="upload-box">
+              <button type="button" class="remove-img" id="removeImg">×</button>
+
+              <i
+                class="fa-solid fa-arrow-up-from-bracket upload-icon"
+                id="uploadIcon"
+              ></i>
+
+              <input type="file" id="imageInput" accept="image/*" />
+
+              <p id="image-text">Click to upload image</p>
+            </div>
+          </div>
+
+          <div class="btn">
+            <button id="submitBtn" class="btn1" type="submit">
+              <span class="btn-text">Post Found Item</span>
+              <span class="spinner"></span>
+            </button>
+
+            <a href="/index.html" class="btn2">Cancel</a>
+          </div>
+        </form>
+      </div>
+
+      <footer class="footer">
+        <p>&copy; 2026 Findit. All rights reserved.</p>
+      </footer>
     </div>
-
-    <div class="formbox">
-      <form id="foundForm">
-        <div class="form-group">
-          <div class="label-row">
-            <label class="formfill req">Item Name</label>
-            <span class="error" id="itemNameError"></span>
-          </div>
-
-          <input
-            id="itemName"
-            class="textbox"
-            type="text"
-            placeholder="eg Black leather wallet"
-          />
-        </div>
-
-        <div class="form-group">
-          <div class="label-row">
-            <label class="formfill req">Description</label>
-            <span class="error" id="descriptionError"></span>
-          </div>
-
-          <textarea
-            id="description"
-            class="textbox1"
-            placeholder="Provide a detailed description of the item..."
-          ></textarea>
-        </div>
-
-        <div class="form-group">
-          <div class="label-row">
-            <label class="formfill req">Found Location</label>
-            <span class="error" id="locationError"></span>
-          </div>
-
-          <input
-            id="location"
-            class="textbox"
-            type="text"
-            placeholder="eg Library entrance"
-          />
-        </div>
-
-        <div class="form-group">
-          <div class="label-row">
-            <label class="formfill req">Date Found</label>
-            <span class="error" id="dateError"></span>
-          </div>
-
-          <input id="dateFound" class="textbox" type="date" />
-        </div>
-
-        <div class="form-group">
-          <div class="label-row">
-            <label class="formfill req">Image</label>
-            <span class="error" id="imageError"></span>
-          </div>
-
-          <div class="upload-box">
-            <button type="button" class="remove-img" id="removeImg">×</button>
-
-            <i
-              class="fa-solid fa-arrow-up-from-bracket upload-icon"
-              id="uploadIcon"
-            ></i>
-
-            <input type="file" id="imageInput" accept="image/*" />
-
-            <p id="image-text">Click to upload image</p>
-          </div>
-        </div>
-
-        <div class="btn">
-          <button id="submitBtn" class="btn1" type="submit">
-            <span class="btn-text">Post Found Item</span>
-            <span class="spinner"></span>
-          </button>
-
-          <a href="/index.html" class="btn2">Cancel</a>
-        </div>
-      </form>
-    </div>
-
-    <footer class="footer">
-      <p>&copy; 2026 Findit. All rights reserved.</p>
-    </footer>
-
     <div id="loader-container"></div>
   </body>
 

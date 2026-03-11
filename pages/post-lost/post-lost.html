@@ -24,102 +24,105 @@
     <title>Find it</title>
   </head>
   <body>
-    <!-- navigation bar will be inserted here automatically.. dont touch This
+    <div id="app" style="display: none">
+      <!-- navigation bar will be inserted here automatically.. dont touch This
     ignore -->
-    <div id="navbar-container"></div>
-    <!-- remove this line by the way.. this is just for your reference.. start coding from here..
+      <div id="navbar-container"></div>
+      <!-- remove this line by the way.. this is just for your reference.. start coding from here..
   dont remove the footer at bottom.. 
   dont remove that div with navbar-container id.. thats for injecting navbar.. ignore that too.. -->
 
-    <div class="header-container">
-      <h1>Report Lost Item</h1>
-      <p id="subline">
-        Fill out the form below to report an item you've lost. Other users will
-        be able to contact you if they find it.
-      </p>
+      <div class="header-container">
+        <h1>Report Lost Item</h1>
+        <p id="subline">
+          Fill out the form below to report an item you've lost. Other users
+          will be able to contact you if they find it.
+        </p>
+      </div>
+      <div class="formbox">
+        <form id="lostForm">
+          <div class="form-group">
+            <div class="label-row">
+              <label class="formfill req">Item Name</label>
+              <span class="error" id="itemNameError"></span>
+            </div>
+
+            <input
+              id="itemName"
+              class="textbox"
+              type="text"
+              placeholder="eg Black leather wallet"
+            />
+          </div>
+
+          <div class="form-group">
+            <div class="label-row">
+              <label class="formfill req">Description</label>
+              <span class="error" id="descriptionError"></span>
+            </div>
+
+            <textarea
+              id="description"
+              class="textbox1"
+              placeholder="Provide a detailed description of the item..."
+            ></textarea>
+          </div>
+
+          <div class="form-group">
+            <div class="label-row">
+              <label class="formfill req">Last Seen Location</label>
+              <span class="error" id="locationError"></span>
+            </div>
+
+            <input
+              id="location"
+              class="textbox"
+              type="text"
+              placeholder="eg City gym, locker room"
+            />
+          </div>
+
+          <div class="form-group">
+            <div class="label-row">
+              <label class="formfill req">Date Lost</label>
+              <span class="error" id="dateError"></span>
+            </div>
+
+            <input id="dateLost" class="textbox" type="date" />
+          </div>
+
+          <div class="form-group">
+            <div class="label-row">
+              <label class="formfill">Image (Optional)</label>
+            </div>
+
+            <div class="upload-box">
+              <button type="button" class="remove-img" id="removeImg">×</button>
+
+              <i
+                class="fa-solid fa-arrow-up-from-bracket upload-icon"
+                id="uploadIcon"
+              ></i>
+              <input type="file" id="imageInput" accept="image/*" />
+              <p id="image-text">Click to upload image</p>
+            </div>
+          </div>
+
+          <div class="btn">
+            <button id="submitBtn" class="btn1" type="submit">
+              <span class="btn-text">Post Lost Item</span>
+              <span class="spinner"></span>
+            </button>
+            <a href="/index.html" class="btn2">Cancel</a>
+          </div>
+        </form>
+      </div>
+
+      <footer class="footer">
+        <p>&copy; 2026 Findit. All rights reserved.</p>
+      </footer>
     </div>
-    <div class="formbox">
-      <form id="lostForm">
-        <div class="form-group">
-          <div class="label-row">
-            <label class="formfill req">Item Name</label>
-            <span class="error" id="itemNameError"></span>
-          </div>
 
-          <input
-            id="itemName"
-            class="textbox"
-            type="text"
-            placeholder="eg Black leather wallet"
-          />
-        </div>
-
-        <div class="form-group">
-          <div class="label-row">
-            <label class="formfill req">Description</label>
-            <span class="error" id="descriptionError"></span>
-          </div>
-
-          <textarea
-            id="description"
-            class="textbox1"
-            placeholder="Provide a detailed description of the item..."
-          ></textarea>
-        </div>
-
-        <div class="form-group">
-          <div class="label-row">
-            <label class="formfill req">Last Seen Location</label>
-            <span class="error" id="locationError"></span>
-          </div>
-
-          <input
-            id="location"
-            class="textbox"
-            type="text"
-            placeholder="eg City gym, locker room"
-          />
-        </div>
-
-        <div class="form-group">
-          <div class="label-row">
-            <label class="formfill req">Date Lost</label>
-            <span class="error" id="dateError"></span>
-          </div>
-
-          <input id="dateLost" class="textbox" type="date" />
-        </div>
-
-        <div class="form-group">
-          <div class="label-row">
-            <label class="formfill">Image (Optional)</label>
-          </div>
-
-          <div class="upload-box">
-            <button type="button" class="remove-img" id="removeImg">×</button>
-
-            <i
-              class="fa-solid fa-arrow-up-from-bracket upload-icon"
-              id="uploadIcon"
-            ></i>
-            <input type="file" id="imageInput" accept="image/*" />
-            <p id="image-text">Click to upload image</p>
-          </div>
-        </div>
-
-        <div class="btn">
-          <button id="submitBtn" class="btn1" type="submit">
-            <span class="btn-text">Post Lost Item</span>
-            <span class="spinner"></span>
-          </button>
-          <a href="/index.html" class="btn2">Cancel</a>
-        </div>
-      </form>
-    </div>
-
-    <footer class="footer">
-      <p>&copy; 2026 Findit. All rights reserved.</p>
-    </footer>
     <div id="loader-container"></div>
   </body>
 

@@ -12,6 +12,8 @@ import {
   serverTimestamp,
 } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-firestore.js";
 
+const app = document.getElementById("app");
+
 document.addEventListener("DOMContentLoaded", async () => {
   renderLoader();
 
@@ -21,6 +23,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   requireAuth();
 
   hideLoader();
+  app.style.display = "block";
 });
 
 const uploadBox = document.querySelector(".upload-box");

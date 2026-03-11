@@ -11,8 +11,7 @@ import {
   addDoc,
   serverTimestamp,
 } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-firestore.js";
-
-// ---------------- PAGE LOAD ----------------
+const app = document.getElementById("app");
 
 document.addEventListener("DOMContentLoaded", async () => {
   renderLoader();
@@ -23,9 +22,8 @@ document.addEventListener("DOMContentLoaded", async () => {
   requireAuth();
 
   hideLoader();
+  app.style.display = "block";
 });
-
-// ---------------- ELEMENTS ----------------
 
 const uploadBox = document.querySelector(".upload-box");
 const imageInput = document.getElementById("imageInput");
@@ -46,8 +44,6 @@ const descriptionError = document.getElementById("descriptionError");
 const locationError = document.getElementById("locationError");
 const dateError = document.getElementById("dateError");
 const imageError = document.getElementById("imageError");
-
-// ---------------- IMAGE UPLOAD UI ----------------
 
 uploadBox.addEventListener("click", () => {
   imageInput.click();
@@ -71,8 +67,6 @@ removeImg.addEventListener("click", (e) => {
   uploadIcon.style.display = "block";
 });
 
-// ---------------- ERROR HANDLING ----------------
-
 function clearErrors() {
   itemNameError.textContent = "";
   descriptionError.textContent = "";
@@ -86,8 +80,6 @@ function clearErrors() {
   dateFound.classList.remove("input-error");
   uploadBox.classList.remove("input-error");
 }
-
-// ---------------- CLOUDINARY UPLOAD ----------------
 
 async function uploadToCloudinary(file) {
   const formData = new FormData();
@@ -111,8 +103,6 @@ async function uploadToCloudinary(file) {
 
   return data.secure_url;
 }
-
-// ---------------- FORM SUBMIT ----------------
 
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
