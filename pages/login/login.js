@@ -7,6 +7,7 @@ import { initAuth } from "../../shared/services/auth.js";
 import { auth } from "../../shared/services/firebase.js";
 
 import { signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-auth.js";
+const app = document.getElementById("app");
 
 document.addEventListener("DOMContentLoaded", async () => {
   renderLoader();
@@ -16,6 +17,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   await renderNavbar();
 
   hideLoader();
+  app.style.display = "block";
 });
 
 const form = document.getElementById("loginForm");

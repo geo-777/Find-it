@@ -14,12 +14,17 @@ import {
   setDoc,
 } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-firestore.js";
 
+const app = document.getElementById("app");
+
 document.addEventListener("DOMContentLoaded", async () => {
   renderLoader();
+
   await initAuth();
+
   await renderNavbar();
 
   hideLoader();
+  app.style.display = "block";
 });
 
 const form = document.querySelector(".form");

@@ -16,7 +16,6 @@ const lostGrid = document.getElementById("lostItemsGrid");
 const foundGrid = document.getElementById("foundItemsGrid");
 
 const app = document.getElementById("app");
-
 document.addEventListener("DOMContentLoaded", async () => {
   renderLoader();
 
