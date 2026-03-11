@@ -15,6 +15,8 @@ import {
 const lostGrid = document.getElementById("lostItemsGrid");
 const foundGrid = document.getElementById("foundItemsGrid");
 
+const app = document.getElementById("app");
+
 document.addEventListener("DOMContentLoaded", async () => {
   renderLoader();
 
@@ -23,7 +25,9 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   await loadLostItems();
   await loadFoundItems();
+
   hideLoader();
+  app.style.display = "block";
 });
 
 function createCard(item) {
