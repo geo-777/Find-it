@@ -1,7 +1,10 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -13,6 +16,7 @@
     <link rel="stylesheet" href="../../shared/theme.css" />
     <link rel="stylesheet" href="../../shared/global.css" />
     <link rel="stylesheet" href="../../shared/footer/footer.css" />
+    <link rel="stylesheet" href="../../shared/loader/loader.css" />
 
     <link rel="stylesheet" href="post-lost.css" />
     <meta charset="UTF-8" />
@@ -26,41 +30,100 @@
     <!-- remove this line by the way.. this is just for your reference.. start coding from here..
   dont remove the footer at bottom.. 
   dont remove that div with navbar-container id.. thats for injecting navbar.. ignore that too.. -->
-    
-      <div class="header-container">
-        <h1>Report Lost Item</h1>
-        <p id="subline">Fill out the form below to report an item you've lost. Other users will be able to contact you if they find it.</p>
-        
-      </div>
-      <div class="formbox">
-        <form>
-          <label class="formfill req">Item Name</label>
-          <input class="textbox" type="text" placeholder="eg Black leather wallet" required>
-          <label class="formfill req">Description</label>
-          <textarea class="textbox1" placeholder="Provide a detailed description of the item..."  required></textarea>
-          <label class="formfill req">Last seen Location</label>
-          <input class="textbox" type="text" placeholder="eg City gym,locker room" required>
-          <label class="formfill req">Date Lost </label>
-          <input class="textbox" type="date" required>
-          <label class="formfill"> Image (Optional)</label>
-          <div class="upload-box" tabindex="0">
-            <i class="fa-solid fa-arrow-up-from-bracket upload-icon"></i>
-            <input type="file">
-            <p id="image-text">Click to upload image</p>
-          </div>
-          <div class="btn">
-            <button class="btn1" type="submit">Post Lost Item</button>
-            <a href="index.html" class="btn2">Cancel</a>
+
+    <div class="header-container">
+      <h1>Report Lost Item</h1>
+      <p id="subline">
+        Fill out the form below to report an item you've lost. Other users will
+        be able to contact you if they find it.
+      </p>
+    </div>
+    <div class="formbox">
+      <form id="lostForm">
+        <div class="form-group">
+          <div class="label-row">
+            <label class="formfill req">Item Name</label>
+            <span class="error" id="itemNameError"></span>
           </div>
 
-        </form>
-      </div>
-   
+          <input
+            id="itemName"
+            class="textbox"
+            type="text"
+            placeholder="eg Black leather wallet"
+          />
+        </div>
+
+        <div class="form-group">
+          <div class="label-row">
+            <label class="formfill req">Description</label>
+            <span class="error" id="descriptionError"></span>
+          </div>
+
+          <textarea
+            id="description"
+            class="textbox1"
+            placeholder="Provide a detailed description of the item..."
+          ></textarea>
+        </div>
+
+        <div class="form-group">
+          <div class="label-row">
+            <label class="formfill req">Last Seen Location</label>
+            <span class="error" id="locationError"></span>
+          </div>
+
+          <input
+            id="location"
+            class="textbox"
+            type="text"
+            placeholder="eg City gym, locker room"
+          />
+        </div>
+
+        <div class="form-group">
+          <div class="label-row">
+            <label class="formfill req">Date Lost</label>
+            <span class="error" id="dateError"></span>
+          </div>
+
+          <input id="dateLost" class="textbox" type="date" />
+        </div>
+
+        <div class="form-group">
+          <div class="label-row">
+            <label class="formfill">Image (Optional)</label>
+          </div>
+
+          <div class="upload-box">
+            <button type="button" class="remove-img" id="removeImg">×</button>
+
+            <i
+              class="fa-solid fa-arrow-up-from-bracket upload-icon"
+              id="uploadIcon"
+            ></i>
+            <input type="file" id="imageInput" accept="image/*" />
+            <p id="image-text">Click to upload image</p>
+          </div>
+        </div>
+
+        <div class="btn">
+          <button id="submitBtn" class="btn1" type="submit">
+            <span class="btn-text">Post Lost Item</span>
+            <span class="spinner"></span>
+          </button>
+          <a href="/index.html" class="btn2">Cancel</a>
+        </div>
+      </form>
+    </div>
+
     <footer class="footer">
       <p>&copy; 2026 Findit. All rights reserved.</p>
     </footer>
+    <div id="loader-container"></div>
   </body>
+
   <script src="../../shared/navbar/navbar.js"></script>
-  <script src="../../shared/navbar/navbar-component.js"></script>
-  <script src="post-lost.js"></script>
+  <script type="module" src="../../shared/navbar/navbar-component.js"></script>
+  <script type="module" src="post-lost.js"></script>
 </html>

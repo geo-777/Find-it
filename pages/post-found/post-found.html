@@ -1,72 +1,133 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
       rel="stylesheet"
     />
+
     <link rel="icon" href="../../assets/logo.png" />
     <link rel="stylesheet" href="../../shared/navbar/navbar.css" />
     <link rel="stylesheet" href="../../shared/theme.css" />
     <link rel="stylesheet" href="../../shared/global.css" />
     <link rel="stylesheet" href="../../shared/footer/footer.css" />
+    <link rel="stylesheet" href="../../shared/loader/loader.css" />
 
     <link rel="stylesheet" href="post-found.css" />
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Find it</title>
   </head>
+
   <body>
-    <!-- navigation bar will be inserted here automatically.. dont touch This
-    ignore -->
     <div id="navbar-container"></div>
 
-    <!-- remove this line by the way.. this is just for your reference.. start coding from here..
-  dont remove the footer at bottom.. 
-  dont remove that div with navbar-container id.. thats for injecting navbar.. ignore that too.. -->
- 
- <div class="container">
+    <div class="header-container">
+      <h1>Report Found Item</h1>
+      <p id="subline">
+        Fill out the form below to report an item you've found. The owner may
+        contact you if it matches their lost item.
+      </p>
+    </div>
 
-<h1>Report Found Item</h1>
+    <div class="formbox">
+      <form id="foundForm">
+        <div class="form-group">
+          <div class="label-row">
+            <label class="formfill req">Item Name</label>
+            <span class="error" id="itemNameError"></span>
+          </div>
 
-<p>Fill out the form below to report an item you've found. The owner will be able to contact you.</p>
+          <input
+            id="itemName"
+            class="textbox"
+            type="text"
+            placeholder="eg Black leather wallet"
+          />
+        </div>
 
-<form>
+        <div class="form-group">
+          <div class="label-row">
+            <label class="formfill req">Description</label>
+            <span class="error" id="descriptionError"></span>
+          </div>
 
+          <textarea
+            id="description"
+            class="textbox1"
+            placeholder="Provide a detailed description of the item..."
+          ></textarea>
+        </div>
 
+        <div class="form-group">
+          <div class="label-row">
+            <label class="formfill req">Found Location</label>
+            <span class="error" id="locationError"></span>
+          </div>
 
-<label>Item Name <span class="required">*</span></label>
-<input type="text" placeholder="e.g., Silver Watch">
+          <input
+            id="location"
+            class="textbox"
+            type="text"
+            placeholder="eg Library entrance"
+          />
+        </div>
 
-<label>Description <span class="required">*</span></label>
-<textarea placeholder="Provide a detailed description of the item..."></textarea>
+        <div class="form-group">
+          <div class="label-row">
+            <label class="formfill req">Date Found</label>
+            <span class="error" id="dateError"></span>
+          </div>
 
-<label>Found At Location <span class="required">*</span></label>
-<input type="text" placeholder="e.g., City Gym, locker room">
+          <input id="dateFound" class="textbox" type="date" />
+        </div>
 
-<label>Date Found <span class="required">*</span></label>
-<input type="date">
+        <div class="form-group">
+          <div class="label-row">
+            <label class="formfill req">Image</label>
+            <span class="error" id="imageError"></span>
+          </div>
 
-<label>Image <span class="required">*</span></label>
+          <div class="upload-box">
+            <button type="button" class="remove-img" id="removeImg">×</button>
 
-<label class="upload-box">
-Click to upload an image
-<input type="file">
-</label>
+            <i
+              class="fa-solid fa-arrow-up-from-bracket upload-icon"
+              id="uploadIcon"
+            ></i>
 
-<div class="buttons">
-<button type="submit" class="post-btn">Post Found Item</button>
-<button type="button" class="cancel-btn">Cancel</button>
-</div>
+            <input type="file" id="imageInput" accept="image/*" />
 
-</form>
-<footer class="footer">
+            <p id="image-text">Click to upload image</p>
+          </div>
+        </div>
+
+        <div class="btn">
+          <button id="submitBtn" class="btn1" type="submit">
+            <span class="btn-text">Post Found Item</span>
+            <span class="spinner"></span>
+          </button>
+
+          <a href="/index.html" class="btn2">Cancel</a>
+        </div>
+      </form>
+    </div>
+
+    <footer class="footer">
       <p>&copy; 2026 Findit. All rights reserved.</p>
     </footer>
+
+    <div id="loader-container"></div>
   </body>
+
   <script src="../../shared/navbar/navbar.js"></script>
-  <script src="../../shared/navbar/navbar-component.js"></script>
-  <script src="post-found.js"></script>
+  <script type="module" src="../../shared/navbar/navbar-component.js"></script>
+  <script type="module" src="post-found.js"></script>
 </html>
