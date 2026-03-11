@@ -22,17 +22,48 @@
   <body>
     <!-- navigation bar will be inserted here automatically.. dont touch This
     ignore -->
-    <div id="navbar-container"></div>
+    <div id="app" style="display: none">
+      <div id="navbar-container"></div>
+      <div class="main-container">
+        <header class="header">
+          <h3>Lost Items</h3>
+          <p>
+            Browse through items that people have lost. If you found any of
+            these items, please contact the owner.
+          </p>
 
-    <!-- remove this line by the way.. this is just for your reference.. start coding from here..
-  dont remove the footer at bottom.. 
-  dont remove that div with navbar-container id.. thats for injecting navigation bar.. ignore that too.. -->
-    <p>Lost page.. write code .. remove this line</p>
+          <div class="input-field">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-search-icon lucide-search"
+            >
+              <path d="m21 21-4.34-4.34" />
+              <circle cx="11" cy="11" r="8" />
+            </svg>
+            <input
+              placeholder="Search by item name, description, or location.."
+              type="text"
+              name="search"
+              id="search"
+            />
+          </div>
+        </header>
+        <section class="grid-lost" id="lostGrid"></section>
+      </div>
+      <footer class="footer">
+        <p>&copy; 2026 Findit. All rights reserved.</p>
+      </footer>
+    </div>
+
     <div id="loader-container"></div>
-
-    <footer class="footer">
-      <p>&copy; 2026 Findit. All rights reserved.</p>
-    </footer>
   </body>
   <script src="../../shared/navbar/navbar.js"></script>
   <script type="module" src="../../shared/navbar/navbar-component.js"></script>
