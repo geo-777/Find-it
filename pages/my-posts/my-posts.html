@@ -20,19 +20,58 @@
     <title>Find it</title>
   </head>
   <body>
-    <!-- navigation bar will be inserted here automatically.. dont touch This
-    ignore -->
-    <div id="navbar-container"></div>
+    <div id="app" style="display: none">
+      <div id="navbar-container"></div>
 
-    <!-- remove this line by the way.. this is just for your reference.. start coding from here..
-  dont remove the footer at bottom.. 
-  dont remove that div with navbar-container id.. thats for injecting navigation bar.. ignore that too.. -->
-    <p>My posts page.. write code .. remove this line</p>
+      <div class="main-container">
+        <header>
+          <h3>My Posts</h3>
+          <p>Manage all your lost and found item posts in one place</p>
+        </header>
+        <div class="noitems">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="60"
+            height="60"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-package-icon lucide-package"
+          >
+            <path
+              d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"
+            />
+            <path d="M12 22V12" />
+            <polyline points="3.29 7 12 12 20.71 7" />
+            <path d="m7.5 4.27 9 5.15" />
+          </svg>
+          <h3>No Posts Yet</h3>
+          <p>You haven't posted any lost or found items yet.</p>
+          <div class="btns">
+            <a href="../post-lost/post-lost.html">Report Lost Item</a>
+
+            <a href="../post-found/post-found.html">Report Found Item</a>
+          </div>
+        </div>
+        <div class="lost" style="display: none">
+          <h3>Lost items</h3>
+          <div id="lost-grid" class="items-grid"></div>
+        </div>
+        <div class="found" style="display: none">
+          <h3>Found items</h3>
+          <div id="found-grid" class="items-grid"></div>
+        </div>
+      </div>
+
+      <footer class="footer">
+        <p>&copy; 2026 Findit. All rights reserved.</p>
+      </footer>
+    </div>
+
     <div id="loader-container"></div>
-
-    <footer class="footer">
-      <p>&copy; 2026 Findit. All rights reserved.</p>
-    </footer>
   </body>
   <script src="../../shared/navbar/navbar.js"></script>
   <script type="module" src="../../shared/navbar/navbar-component.js"></script>
