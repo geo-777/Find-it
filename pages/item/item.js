@@ -4,6 +4,7 @@ import {
   hideLoader,
 } from "../../shared/loader/loader-component.js";
 import { initAuth } from "../../shared/services/auth.js";
+const app = document.getElementById("app");
 
 document.addEventListener("DOMContentLoaded", async () => {
   renderLoader();
@@ -12,4 +13,5 @@ document.addEventListener("DOMContentLoaded", async () => {
   await renderNavbar();
 
   hideLoader();
+  app.style.display = "block";
 });

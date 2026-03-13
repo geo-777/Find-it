@@ -22,10 +22,15 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   requireAuth();
 
+  // ADD THIS CHECK
+  if (!auth.currentUser.emailVerified) {
+    window.location.href = "../verify-email/verify-email.html";
+    return;
+  }
+
   hideLoader();
   app.style.display = "block";
 });
-
 const uploadBox = document.querySelector(".upload-box");
 const imageInput = document.getElementById("imageInput");
 const imageText = document.getElementById("image-text");

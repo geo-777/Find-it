@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Verify Email | Find it</title>
+
+    <!-- Fonts & Styles -->
+    <link rel="icon" href="../../assets/logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../shared/navbar/navbar.css" />
+    <link rel="stylesheet" href="../../shared/theme.css" />
+    <link rel="stylesheet" href="../../shared/global.css" />
+    <link rel="stylesheet" href="../../shared/footer/footer.css" />
+    <link rel="stylesheet" href="../../shared/loader/loader.css" />
+
+    <link rel="stylesheet" href="verify-email.css" />
+  </head>
+  <body>
+    <div id="app" style="display: none">
+      <div id="navbar-container"></div>
+
+      <main>
+        <div class="verify-container">
+          <h2>Verify Your Email</h2>
+          <p id="status-text">
+            Please verify your email before posting items. Check your inbox or
+            send a new verification email. If you don’t see it, check your spam
+            folder.
+          </p>
+
+          <div class="btn-group">
+            <button id="sendVerificationBtn">
+              <!-- Lucide mail icon -->
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="lucide"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M4 4h16v16H4z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+              Send Verification Email
+            </button>
+
+            <a href="/index.html" id="goHomeBtn">
+              <!-- Lucide home icon -->
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="lucide"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M3 9L12 2l9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
+                ></path>
+                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+              </svg>
+              Go Home
+            </a>
+          </div>
+
+          <p id="message" class="message"></p>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <p>&copy; 2026 Findit. All rights reserved.</p>
+      </footer>
+    </div>
+
+    <div id="loader-container"></div>
+
+    <script src="../../shared/navbar/navbar.js"></script>
+    <script
+      type="module"
+      src="../../shared/navbar/navbar-component.js"
+    ></script>
+    <script type="module" src="verify-email.js"></script>
+  </body>
+</html>
