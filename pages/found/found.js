@@ -33,12 +33,14 @@ document.addEventListener("DOMContentLoaded", async () => {
   app.style.display = "block";
 });
 
-function createCard(item, searchQuery = "") {
+function createCard(item, id, searchQuery = "") {
   const image =
     item.imageUrl ||
     "https://upload.wikimedia.org/wikipedia/commons/d/d1/Image_not_available.png";
 
-  const date = new Date(item.dateFound).toLocaleDateString("en-US", {
+  const date = new Date(
+    item.dateFound || item.createdAt?.toDate?.() || new Date(),
+  ).toLocaleDateString("en-US", {
     year: "numeric",
     month: "long",
     day: "numeric",
@@ -52,58 +54,59 @@ function createCard(item, searchQuery = "") {
   );
 
   return `
-  <div class="item-card">
-
-    <div class="item-card__image">
-      <img src="${image}" alt="${item.itemName}">
-    </div>
-
-    <div class="item-card__content">
-
-      <h3 class="item-card__title">${title}</h3>
-
-      <p class="item-card__description">
-        ${desc}
-      </p>
-
-      <div class="item-card__meta">
-
-        <div class="item-card__meta-row">
-          <span>${location}</span>
-        </div>
-
-        <div class="item-card__meta-row">
-          <span>${date}</span>
-        </div>
-
+    <div class="item-card">
+      <div class="item-card__image">
+        <img src="${image}" alt="${item.itemName}">
       </div>
 
-      <a href="#" class="btn-primary item-card__btn">
-        View Details
-      </a>
+      <div class="item-card__content">
+        <h3 class="item-card__title">${title}</h3>
 
+        <p class="item-card__description">${desc}</p>
+
+        <div class="item-card__meta">
+          <div class="item-card__meta-row">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+              viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 10c0 6-8 11-8 11S4 16 4 10a8 8 0 0 1 16 0Z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+            <span>${location}</span>
+          </div>
+          <div class="item-card__meta-row">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+              viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect width="18" height="18" x="3" y="4" rx="2"/>
+              <path d="M16 2v4M8 2v4M3 10h18"/>
+            </svg>
+            <span>${date}</span>
+          </div>
+        </div>
+
+        <a href="/pages/item/item.html?id=${id}" class="btn-primary item-card__btn">
+          View Details
+        </a>
+      </div>
     </div>
-
-  </div>
   `;
 }
 
 async function loadFoundItems() {
   const q = query(collection(db, "foundItems"), orderBy("createdAt", "desc"));
-
   const snapshot = await getDocs(q);
 
   foundItems = [];
-
   snapshot.forEach((doc) => {
-    foundItems.push(doc.data());
+    foundItems.push({ ...doc.data(), id: doc.id });
   });
 
   renderItems(foundItems);
 }
 
 function renderItems(items, searchQuery = "") {
-  foundGrid.innerHTML = "";
+  if (!foundGrid) return;
 
   if (items.length === 0) {
     foundGrid.innerHTML =
@@ -111,37 +114,38 @@ function renderItems(items, searchQuery = "") {
     return;
   }
 
-  items.forEach((item) => {
-    foundGrid.innerHTML += createCard(item, searchQuery);
-  });
+  const html = items
+    .map((item) => createCard(item, item.id, searchQuery))
+    .join("");
+  foundGrid.innerHTML = html;
 }
 
 function highlightText(text, query) {
   if (!query) return text;
-
   const regex = new RegExp(`(${query})`, "gi");
-
   return text.replace(regex, `<mark>$1</mark>`);
 }
 
-searchInput.addEventListener("input", () => {
-  clearTimeout(debounceTimer);
+if (searchInput) {
+  searchInput.addEventListener("input", () => {
+    clearTimeout(debounceTimer);
 
-  debounceTimer = setTimeout(() => {
-    const query = searchInput.value.trim().toLowerCase();
+    debounceTimer = setTimeout(() => {
+      const query = searchInput.value.trim().toLowerCase();
 
-    const filteredItems = foundItems.filter((item) => {
-      const title = item.itemName?.toLowerCase() || "";
-      const desc = item.description?.toLowerCase() || "";
-      const location = item.location?.toLowerCase() || "";
+      const filteredItems = foundItems.filter((item) => {
+        const title = item.itemName?.toLowerCase() || "";
+        const desc = item.description?.toLowerCase() || "";
+        const location = item.location?.toLowerCase() || "";
 
-      return (
-        title.includes(query) ||
-        desc.includes(query) ||
-        location.includes(query)
-      );
-    });
+        return (
+          title.includes(query) ||
+          desc.includes(query) ||
+          location.includes(query)
+        );
+      });
 
-    renderItems(filteredItems, query);
-  }, 300);
-});
+      renderItems(filteredItems, query);
+    }, 300);
+  });
+}

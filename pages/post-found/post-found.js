@@ -20,7 +20,10 @@ document.addEventListener("DOMContentLoaded", async () => {
   await renderNavbar();
 
   requireAuth();
-
+  if (!auth.currentUser.emailVerified) {
+    window.location.href = "../verify-email/verify-email.html";
+    return;
+  }
   hideLoader();
   app.style.display = "block";
 });

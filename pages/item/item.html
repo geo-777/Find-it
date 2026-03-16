@@ -23,8 +23,154 @@
     <div id="app" style="display: none">
       <div id="navbar-container"></div>
 
-      <p>Verify page.. write code .. remove this line</p>
+      <div class="main-container">
+        <div class="item-card">
+          <div class="image-wrapper">
+            <img
+              id="item-image"
+              src="https://upload.wikimedia.org/wikipedia/commons/d/d1/Image_not_available.png"
+              alt="Item Image"
+            />
+          </div>
 
+          <div class="item-content">
+            <span class="status-tag" id="item-status">Found</span>
+            <h1 id="item-title">Silver Watch</h1>
+
+            <div class="details-grid">
+              <div class="description-section">
+                <h4>Description</h4>
+                <p id="item-description">
+                  Elegant silver wristwatch with leather strap
+                </p>
+              </div>
+
+              <div class="meta-section">
+                <div class="meta-item">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-map-pin"
+                  >
+                    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+                    <circle cx="12" cy="10" r="3" />
+                  </svg>
+                  <div>
+                    <p class="label">Location</p>
+                    <p id="item-location">City Gym, locker room</p>
+                  </div>
+                </div>
+                <div class="meta-item">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-calendar"
+                  >
+                    <rect width="18" height="18" x="3" y="4" rx="2" ry="2" />
+                    <line x1="16" x2="16" y1="2" y2="6" />
+                    <line x1="8" x2="8" y1="2" y2="6" />
+                    <line x1="3" x2="21" y1="10" y2="10" />
+                  </svg>
+                  <div>
+                    <p class="label">Date</p>
+                    <p id="item-date">February 16, 2026</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <hr class="divider" />
+
+            <div class="contact-section">
+              <h3>Contact Information</h3>
+              <div class="contact-card">
+                <div class="contact-row">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-user"
+                  >
+                    <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
+                    <circle cx="12" cy="7" r="4" />
+                  </svg>
+                  <div>
+                    <p class="label">Posted by</p>
+                    <p id="contact-name">Emily Chen</p>
+                  </div>
+                </div>
+                <div class="contact-row">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-phone"
+                  >
+                    <path
+                      d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                    />
+                  </svg>
+                  <div>
+                    <p class="label">Phone</p>
+                    <p id="contact-phone">+1 (555) 456-7890</p>
+                  </div>
+                </div>
+                <div class="contact-row">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-mail"
+                  >
+                    <rect width="20" height="16" x="2" y="4" rx="2" />
+                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                  </svg>
+                  <div>
+                    <p class="label">Email</p>
+                    <p id="contact-email">emily.chen@email.com</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <button class="back-btn" onclick="window.history.back()">
+              Go back
+            </button>
+          </div>
+        </div>
+      </div>
       <footer class="footer">
         <p>&copy; 2026 Findit. All rights reserved.</p>
       </footer>
