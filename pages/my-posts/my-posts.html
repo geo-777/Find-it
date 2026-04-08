@@ -78,11 +78,39 @@
       </footer>
     </div>
 
+    <!-- MATCHES MODAL -->
+    <div id="matches-modal" class="modal-overlay" style="display: none;">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3>AI Match Results</h3>
+          <button id="close-modal-btn" class="close-btn">&times;</button>
+        </div>
+        
+        <div class="modal-body">
+          <div id="matches-loading" class="matches-loading" style="display: none;">
+            <div class="spinner"></div>
+            <p>AI is analyzing potential matches...</p>
+          </div>
+          
+          <div id="matches-empty" class="matches-empty" style="display: none;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            <h4>No Matches Found</h4>
+            <p>We couldn't find any items matching your post right now.</p>
+          </div>
+
+          <div id="matches-grid" class="items-grid" style="display: none;">
+            <!-- Matched items injected dynamically -->
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script src="../../shared/navbar/navbar.js"></script>
     <script
       type="module"
       src="../../shared/navbar/navbar-component.js"
     ></script>
     <script type="module" src="my-posts.js"></script>
+    <script type="module" src="../../api.js"></script>
   </body>
 </html>
